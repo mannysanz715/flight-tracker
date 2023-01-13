@@ -34,6 +34,17 @@
     <button type="submit">Add Ticket</button>
   </form>
 
+  <form action="???" method="post">
+    <div>Add Meal to Flight</div>
+  <select name="mealId">
+    <% meals.forEach(meal => { %>
+      <option value="<%= meal.name %>"><%= meal.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Add</button>
+</form>
+
+
 
 <% if (flight.tickets.length) { %>
   <h2>Purchased Tickets:</h2>
@@ -44,7 +55,7 @@
   <% }) %>
 
   <% } else { %>
-   
+  
     <h2>No Purchased Tickets Yet</h2>
 
 <% } %>
