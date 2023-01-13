@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css" />
+<%- include('../partials/nav') %>
+
+<h1>Flight Tracker</h1>
+
+<% flights.forEach(flight => { %>
+  <div>Flight: </div>
+  <div><%= flight.airline %></div>
+  <div>Airport: </div>
+  <div><%= flight.airport %></div>
+  <div>Flight Number: </div>
+  <div><%= flight.flightNo %></div>
+  <div>Departure Date: </div>
+  <div><%= flight.departs %></div>
+
+  <form action="/flights/<%= flight._id %>?_method=DELETE" method="post">
+  <button type="submit">Delete Flight</button>
+  </form>
+  <form action="/flights/<%= flight._id %>" method="GET">
+    <button>Show Flight</button>
+  </form>
+  <hr>
+<% }) %>
+
+<%- include('../partials/footer') %>
